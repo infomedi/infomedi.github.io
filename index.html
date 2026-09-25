@@ -1,21 +1,89 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>인포메디 약 정보 모음</title>
+<meta name="description" content="인스타 카드뉴스에서 다 못한 약 이야기를 약마다 자세히 정리했어요.">
+<meta name="theme-color" content="#f4f7fb">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
-body{margin:0;background:#000;color:#fff;font-family:-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}
-main{max-width:520px;margin:0 auto;padding:28px 16px 48px}
-h1{font-size:20px;margin:0 0 4px} p{margin:0 0 20px;color:#aaa;font-size:14px}
-.item{display:flex;gap:14px;align-items:center;padding:12px;margin-bottom:10px;border-radius:14px;background:#161616;color:inherit;text-decoration:none}
-.item img{width:72px;height:90px;object-fit:cover;border-radius:8px;flex:none}
-.item b{display:block;font-size:15px;line-height:1.4;margin-bottom:6px} .item small{color:#8fd3a8;font-size:13px}
+:root{--bg:#f4f7fb;--card:#fff;--ink:#1b2433;--sub:#6b7686;--line:#e4e9f0;--blue:#3d7be6;--blue-soft:#e8f0fd;--peach:#fbe3d3;--sky:#dcebf7}
+*{box-sizing:border-box}
+body{margin:0;word-break:keep-all;background:var(--bg);color:var(--ink);font-family:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+main{max-width:520px;margin:0 auto;padding:0 16px 48px}
+
+/* 상단 프로필 */
+.hero{margin:0 -16px 20px;padding:36px 20px 24px;text-align:center;background:linear-gradient(180deg,var(--sky) 0%,var(--peach) 100%);border-radius:0 0 28px 28px}
+.avatar{width:88px;height:88px;margin:0 auto 12px;border-radius:50%;overflow:hidden;border:3px solid #fff;box-shadow:0 4px 14px rgba(27,36,51,.12);background:#fff}
+.avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;transform:scale(1.9);transform-origin:40% 18%}
+.hero h1{margin:0 0 6px;font-size:21px;font-weight:800;letter-spacing:-.02em}
+.hero p{margin:0 auto 18px;max-width:300px;color:#4a5566;font-size:14px;line-height:1.55}
+.links{display:flex;gap:8px;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 16px;border-radius:999px;font-size:14px;font-weight:700;background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(27,36,51,.08)}
+.btn.primary{background:#03c75a;color:#fff}
+.btn svg{width:16px;height:16px;flex:none}
+
+/* 검색 */
+.search{position:sticky;top:0;z-index:5;margin:0 -16px 16px;padding:10px 16px;background:var(--bg)}
+.search label{display:flex;align-items:center;gap:8px;height:46px;padding:0 14px;border-radius:14px;background:var(--card);border:1px solid var(--line)}
+.search label:focus-within{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft)}
+.search svg{width:18px;height:18px;color:var(--sub);flex:none}
+.search input{flex:1;min-width:0;border:0;outline:0;background:none;font:inherit;font-size:16px;color:var(--ink)}
+.search input::placeholder{color:#9aa4b2}
+.count{margin:0 2px 12px;font-size:13px;color:var(--sub)}
+.count b{color:var(--blue)}
+
+/* 목록 */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 12px}
+.item{display:block;min-width:0}
+.item img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;background:var(--sky);box-shadow:0 2px 8px rgba(27,36,51,.08);transition:transform .15s}
+.item:active img{transform:scale(.97)}
+.item span{display:block;padding:8px 2px 0}
+.item small{display:inline-block;margin-bottom:4px;padding:3px 8px;border-radius:6px;background:var(--blue-soft);color:var(--blue);font-size:12px;font-weight:700}
+.item b{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:14px;font-weight:600;line-height:1.4;letter-spacing:-.01em}
+.empty{display:none;padding:40px 0;text-align:center;color:var(--sub);font-size:14px;line-height:1.6}
+
+footer{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);color:#8a94a3;font-size:12px;line-height:1.6;text-align:center}
 </style></head><body><main>
-<h1>인포메디 약 정보 모음</h1><p>인스타 카드뉴스에서 다 못한 이야기를 약마다 자세히 정리했어요.</p>
+
+<header class="hero">
+<div class="avatar"><img src="c/파티마겔.jpg" alt="인포메디 쿼카"></div>
+<h1>인포메디 약 정보 모음</h1>
+<p>인스타 카드뉴스에서 다 못한 이야기를 약마다 자세히 정리했어요.</p>
+<div class="links">
+<a class="btn primary" href="https://blog.naver.com/info_medi_"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.3 12.8 7.5 0H0v24h7.7V11.2L16.5 24H24V0h-7.7z" transform="scale(.7) translate(5 5)"/></svg>블로그</a>
+<a class="btn" href="https://www.instagram.com/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>인스타그램</a>
+</div>
+</header>
+
+<div class="search"><label><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="약 이름으로 찾아보세요" autocomplete="off"></label></div>
+<p class="count" id="count"></p>
+
+<div class="grid" id="list">
 <a class="item" href="https://m.blog.naver.com/PostSearchList.naver?blogId=info_medi_&amp;orderType=sim&amp;searchText=%ED%8C%8C%ED%8B%B0%EB%A7%88%EA%B2%94"><img src="c/파티마겔.jpg" alt="" loading="lazy">
-<span><b>파티마겔, 처음 바를 때 어떤 순서로 하나요?</b><small>파티마겔 · 자세히 보기 →</small></span></a>
+<span><small>파티마겔</small><b>파티마겔, 처음 바를 때 어떤 순서로 하나요?</b></span></a>
 <a class="item" href="https://m.blog.naver.com/PostSearchList.naver?blogId=info_medi_&amp;orderType=sim&amp;searchText=%EC%95%84%EC%A0%A4%EB%A6%AC%EC%95%84%ED%81%AC%EB%A6%BC"><img src="c/아젤리아크림.jpg" alt="" loading="lazy">
-<span><b>아젤리아크림, 여드름 부위에만 발라도 될까요?</b><small>아젤리아크림 · 자세히 보기 →</small></span></a>
+<span><small>아젤리아크림</small><b>아젤리아크림, 여드름 부위에만 발라도 될까요?</b></span></a>
 <a class="item" href="https://blog.naver.com/info_medi_/224421938307"><img src="c/테스토스테론.jpg" alt="" loading="lazy">
-<span><b>테스토스테론, 수치가 낮으면 주사를 맞아야 할까요?</b><small>테스토스테론 · 자세히 보기 →</small></span></a>
+<span><small>테스토스테론</small><b>테스토스테론, 수치가 낮으면 주사를 맞아야 할까요?</b></span></a>
 <a class="item" href="https://m.blog.naver.com/PostSearchList.naver?blogId=info_medi_&amp;orderType=sim&amp;searchText=%ED%8C%8C%EB%AA%A8%ED%81%90%EC%A0%95"><img src="c/파모큐정.jpg" alt="" loading="lazy">
-<span><b>파모큐정, 다른 약과 함께 복용해도 될까요?</b><small>파모큐정 · 자세히 보기 →</small></span></a>
-</main></body></html>
+<span><small>파모큐정</small><b>파모큐정, 다른 약과 함께 복용해도 될까요?</b></span></a>
+</div>
+<p class="empty" id="empty">찾는 약이 아직 없어요.<br>블로그에서 검색해 보세요.</p>
+
+<footer>이 페이지의 정보는 일반적인 참고용이에요.<br>복용 전에는 꼭 의사·약사와 상담하세요.</footer>
+</main>
+<script>
+(function(){
+  var q=document.getElementById('q'),items=[].slice.call(document.querySelectorAll('.item')),
+      count=document.getElementById('count'),empty=document.getElementById('empty');
+  function norm(s){return s.toLowerCase().replace(/\s+/g,'')}
+  function run(){
+    var v=norm(q.value),n=0;
+    items.forEach(function(el){var hit=!v||norm(el.textContent).indexOf(v)>-1;el.style.display=hit?'':'none';if(hit)n++});
+    count.innerHTML=v?'<b>'+n+'</b>개 찾았어요':'전체 <b>'+n+'</b>개';
+    empty.style.display=n?'none':'block';
+  }
+  q.addEventListener('input',run);run();
+})();
+</script>
+</body></html>
