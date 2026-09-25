@@ -2,104 +2,67 @@
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>인포메디 약 정보 모음</title>
 <meta name="description" content="약이 어려운 당신을 위한 정보 정리소. 인스타 카드뉴스에서 다 못한 약 이야기를 약마다 자세히 정리했어요.">
-<meta name="theme-color" content="#1c4a3a">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&display=swap">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<meta name="theme-color" content="#eef6ef">
 <style>
-:root{
-  --green-dk:#1c4a3a;--green:#2b795a;--sage:#3d6e57;--mint:#f0f8f0;--mint-card:#edf7ef;--mint-line:#cfe6d6;
-  --orange:#d58d51;--cream:#fcf8e7;--cream-line:#efd9b8;--ink:#1f2e27;--sub:#7d8a83;--line:#e3ece5
-}
+:root{--green-dk:#1c4a3a;--green:#2b795a;--mint:#eef6ef;--orange:#c9793d;--ink:#222;--sub:#888;--line:#e5e5e5}
 *{box-sizing:border-box}
-body{margin:0;background:var(--mint);color:var(--ink);font-family:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;word-break:keep-all;-webkit-font-smoothing:antialiased}
+body{margin:0;background:#fff;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;word-break:keep-all;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-main{max-width:520px;margin:0 auto;background:#fff;min-height:100vh}
-.jua{font-family:Jua,"Pretendard Variable",sans-serif;font-weight:400}
+main{max-width:520px;margin:0 auto}
 
-/* 상단 바 */
-.topbar{display:flex;align-items:center;justify-content:space-between;height:40px;padding:0 16px;background:var(--green-dk);color:#fff;font-size:13px;font-weight:700}
-.topbar span{color:#f3c79c}
-
-/* 히어로 */
-.hero{position:relative;overflow:hidden;padding:28px 20px 24px;text-align:center;background:linear-gradient(135deg,#e6f2e2 0%,#f3f6e6 55%,#f7eed3 100%)}
-.hero>*{position:relative}
-.blob{position:absolute;border-radius:50%;pointer-events:none}
-.blob.a{width:180px;height:180px;left:-70px;top:-40px;background:#dcecd8}
-.blob.b{width:200px;height:200px;right:-80px;bottom:-90px;background:#f4e3c3}
-.pill{position:absolute;width:44px;height:18px;border-radius:9px;pointer-events:none;background:linear-gradient(90deg,var(--c) 50%,#fff 50%);opacity:.75;transform:rotate(var(--r))}
-.avatar{width:112px;height:112px;margin:0 auto 14px;border-radius:50%;padding:5px;background:#fff;box-shadow:0 6px 18px rgba(28,74,58,.15)}
-.avatar img{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover}
-.badge{display:inline-block;padding:5px 14px;border-radius:999px;background:var(--orange);color:#fff;font-size:15px;letter-spacing:.02em}
-.hero h1{margin:6px 0 8px;color:var(--green-dk);font-size:46px;line-height:1.1}
-.hero h1 i{font-style:normal;color:var(--orange)}
-.hero .lead{margin:0 0 4px;color:var(--sage);font-size:16px;font-weight:700}
-.hero .sub{margin:0 0 16px;color:var(--sub);font-size:13px}
-.tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
-.tags span{padding:6px 11px;border-radius:999px;background:#fff;color:var(--green-dk);font-size:12.5px;font-weight:700;box-shadow:0 1px 3px rgba(28,74,58,.08)}
-.tags span.hot{color:var(--orange)}
+/* 상단 */
+.hero{display:flex;gap:14px;align-items:center;padding:24px 16px 20px;background:var(--mint);border-bottom:1px solid #dde9df}
+.avatar{width:68px;height:68px;flex:none;border-radius:50%;overflow:hidden;border:2px solid #fff}
+.avatar img{display:block;width:100%;height:100%;object-fit:cover}
+.hero .kicker{margin:0 0 2px;color:var(--orange);font-size:12px;font-weight:700}
+.hero h1{margin:0 0 4px;color:var(--green-dk);font-size:22px;font-weight:800;letter-spacing:-.03em}
+.hero .lead{margin:0;color:#555;font-size:13px;line-height:1.5}
 
 /* 바로가기 */
-.links{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:18px 16px 4px}
-.btn{display:flex;align-items:center;justify-content:center;gap:6px;height:44px;border-radius:999px;font-size:14px;font-weight:800;background:#fff;color:var(--green-dk);border:1px solid var(--mint-line)}
-.btn.dk{grid-column:1/-1;background:var(--green-dk);color:#fff;border:0}
-.btn svg{width:16px;height:16px;flex:none}
+.links{display:flex;border-bottom:1px solid var(--line)}
+.links a{flex:1;padding:13px 0;text-align:center;font-size:14px;font-weight:700;color:var(--green-dk)}
+.links a+a{border-left:1px solid var(--line)}
+.links a.dk{background:var(--green-dk);color:#fff}
 
 /* 검색 */
-.search{position:sticky;top:0;z-index:5;padding:12px 16px;background:#fff}
-.search label{display:flex;align-items:center;gap:8px;height:46px;padding:0 14px;border-radius:12px;background:var(--mint-card);border:1px solid var(--mint-line)}
-.search label:focus-within{border-color:var(--green);background:#fff}
-.search svg{width:18px;height:18px;color:var(--sage);flex:none}
-.search input{flex:1;min-width:0;border:0;outline:0;background:none;font:inherit;font-size:16px;color:var(--ink)}
-.search input::placeholder{color:#9aa79f}
+.search{position:sticky;top:0;z-index:5;padding:12px 16px;background:#fff;border-bottom:1px solid var(--line)}
+.search input{width:100%;height:42px;padding:0 12px;border:1px solid #d6d6d6;border-radius:4px;background:#fafafa;font:inherit;font-size:16px;color:var(--ink);outline:0;-webkit-appearance:none}
+.search input:focus{border-color:var(--green);background:#fff}
 
 /* 목록 */
 .section{padding:0 16px}
-.section h2{display:flex;align-items:baseline;justify-content:space-between;margin:6px 0 12px;padding-bottom:10px;border-bottom:1px solid var(--line);font-size:15px;font-weight:800;color:var(--green-dk)}
-.section h2::before{content:"– ";white-space:pre}
-.section h2 small{margin-left:auto;font-size:12px;font-weight:600;color:var(--sub)}
-.section h2 small b{color:var(--green)}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 10px}
+.section h2{display:flex;align-items:baseline;margin:18px 0 12px;font-size:15px;font-weight:800;color:var(--green-dk)}
+.section h2 small{margin-left:6px;font-size:13px;font-weight:400;color:var(--sub)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px 10px}
 .item{display:block;min-width:0}
-.item img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;background:var(--mint-card);transition:opacity .15s}
-.item:active img{opacity:.8}
-.item span{display:block;padding:8px 1px 0}
-.item b{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:14px;font-weight:800;line-height:1.4;color:var(--green-dk)}
+.item img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px;background:#f2f2f2}
+.item span{display:block;padding-top:8px}
+.item b{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:14px;font-weight:700;line-height:1.4}
 .item small{display:block;margin-top:3px;font-size:12px;color:var(--sub)}
 .empty{display:none;padding:36px 0;text-align:center;color:var(--sub);font-size:14px;line-height:1.6}
-.empty a{color:var(--green);font-weight:700;text-decoration:underline}
+.empty a{color:var(--green);text-decoration:underline}
 
 /* 안내 */
-.notice{margin:32px 16px 0;padding:16px 18px;border-radius:14px;background:var(--cream);border:1px solid var(--cream-line)}
-.notice h3{margin:0 0 8px;text-align:center;color:var(--orange);font-size:15px;font-weight:800}
-.notice ul{margin:0;padding:0;list-style:none;font-size:13px;line-height:1.65;color:#5c5a50}
-.notice li::before{content:"· "}
-.notice b{color:var(--ink)}
-footer{padding:24px 16px 40px;text-align:center;color:var(--sub);font-size:12px}
+.notice{margin:36px 16px 0;padding-top:16px;border-top:1px solid var(--line);color:var(--sub);font-size:12px;line-height:1.7}
+.notice h3{margin:0 0 4px;font-size:12px;font-weight:700;color:#666}
+.notice p{margin:0}
+footer{padding:16px 16px 40px;color:#aaa;font-size:12px}
 </style></head><body><main>
 
-<div class="topbar"><span class="jua">인포메디</span>약 정보 모음</div>
-
 <header class="hero">
-<i class="blob a"></i><i class="blob b"></i>
-<i class="pill" style="--c:#b9dcc4;--r:-25deg;left:18px;top:150px"></i>
-<i class="pill" style="--c:#f3c79c;--r:30deg;right:22px;top:36px"></i>
-<i class="pill" style="--c:#b9dcc4;--r:15deg;right:30px;top:170px"></i>
 <div class="avatar"><img src="img/quokka.jpg" alt="인포메디 쿼카"></div>
-<span class="badge jua">매일 쉬운 약 이야기</span>
-<h1 class="jua">인포메디<i>.</i></h1>
-<p class="lead">약이 어려운 당신을 위한 정보 정리소</p>
-<p class="sub">성분부터 복용법, 주의할 점까지 쿼카와 함께 차근차근</p>
-<div class="tags"><span>#약품정보</span><span>#성분정보</span><span>#복용법</span><span class="hot">#부작용·주의사항</span></div>
+<div><p class="kicker">매일 쉬운 약 이야기</p>
+<h1>인포메디 약 정보 모음</h1>
+<p class="lead">인스타 카드뉴스에서 다 못한 이야기를 약마다 자세히 정리했어요.</p></div>
 </header>
 
 <nav class="links">
-<a class="btn dk" href="https://blog.naver.com/info_medi_">블로그에서 전체 보기</a>
-<a class="btn" href="https://www.instagram.com/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>인스타 카드뉴스</a>
-<a class="btn" href="https://www.threads.net/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16.5 11.5c-.4-2.6-2-3.9-4.4-3.9-2.6 0-4.3 1.8-4.3 4.4 0 2.8 1.8 4.6 4.5 4.6 2.2 0 3.7-1.2 3.7-3 0-1.9-1.8-2.8-4-2.6-1.8.1-2.8 1-2.8 2.1 0 1 .9 1.8 2.3 1.8 2.3 0 3.4-1.9 3.4-4.8"/><path d="M19.5 7.5C18 4.6 15.4 3 12 3 6.8 3 3.5 6.8 3.5 12s3.3 9 8.5 9c3.9 0 6.8-2 7.9-5.2"/></svg>스레드</a>
+<a class="dk" href="https://blog.naver.com/info_medi_">블로그</a>
+<a href="https://www.instagram.com/">인스타그램</a>
+<a href="https://www.threads.net/">스레드</a>
 </nav>
 
-<div class="search"><label><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="약 이름으로 찾아보세요" autocomplete="off"></label></div>
+<div class="search"><input id="q" type="search" placeholder="약 이름 검색" autocomplete="off"></div>
 
 <section class="section">
 <h2>약품 정보 <small id="count"></small></h2>
@@ -118,11 +81,7 @@ footer{padding:24px 16px 40px;text-align:center;color:var(--sub);font-size:12px}
 
 <aside class="notice">
 <h3>읽기 전 확인해 주세요</h3>
-<ul>
-<li>모든 글은 공개된 의약품 자료를 바탕으로 한 <b>일반 정보</b>예요.</li>
-<li>개인의 상태에 따라 복용법이 달라질 수 있어요.</li>
-<li>약을 시작하거나 끊기 전에는 꼭 <b>의사·약사와 상담</b>하세요.</li>
-</ul>
+<p>모든 글은 공개된 의약품 자료를 바탕으로 한 일반 정보예요. 개인 상태에 따라 복용법이 달라질 수 있으니, 약을 시작하거나 끊기 전에는 꼭 의사·약사와 상담하세요.</p>
 </aside>
 <footer>© 인포메디</footer>
 </main>
@@ -140,7 +99,7 @@ footer{padding:24px 16px 40px;text-align:center;color:var(--sub);font-size:12px}
   function run(){
     var v=norm(q.value),n=0;
     items.forEach(function(el){var hit=!v||norm(el.querySelector('b').textContent).indexOf(v)>-1;el.style.display=hit?'':'none';if(hit)n++});
-    count.innerHTML=v?'<b>'+n+'</b>개 찾았어요':'<b>'+n+'</b>개';
+    count.textContent=v?n+'개 찾음':n+'개';
     empty.style.display=n?'none':'block';
     bs.href='https://m.blog.naver.com/PostSearchList.naver?blogId=info_medi_&orderType=sim&searchText='+encodeURIComponent(q.value.trim());
   }
