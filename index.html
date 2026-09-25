@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>인포메디 약 정보 모음</title>
-<meta name="description" content="약이 어려운 당신을 위한 정보 정리소. 인스타 카드뉴스에서 다 못한 약 이야기를 약마다 자세히 정리했어요.">
+<title>인포메디 의약품 정보 모음</title>
+<meta name="description" content="인스타 카드뉴스에서 다룬 의약품의 성분, 복용법, 주의사항을 블로그 글로 자세히 정리했어요.">
 <meta name="theme-color" content="#1c4a3a">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&display=swap">
@@ -67,6 +67,8 @@ main{max-width:520px;margin:0 auto;background:#fff;min-height:100vh}
 .item span{display:block;padding:8px 1px 0}
 .item b{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:14px;font-weight:800;line-height:1.4;color:var(--green-dk)}
 .item small{display:block;margin-top:3px;font-size:12px;color:var(--sub)}
+.more{display:none;width:100%;height:46px;margin-top:22px;border:1px solid var(--mint-line);border-radius:999px;background:#fff;color:var(--green-dk);font:inherit;font-size:14px;font-weight:800;cursor:pointer}
+.more span{margin-left:4px;font-weight:600;color:var(--sub)}
 .empty{display:none;padding:36px 0;text-align:center;color:var(--sub);font-size:14px;line-height:1.6}
 .empty a{color:var(--green);font-weight:700;text-decoration:underline}
 
@@ -87,9 +89,9 @@ main{max-width:520px;margin:0 auto;background:#fff;min-height:100vh}
 <div class="avatar"><img src="img/quokka.jpg" alt="인포메디 쿼카"></div>
 <span class="badge jua">카드뉴스 자세히 보기</span>
 <h1 class="jua">인포메디<i>.</i></h1>
-<p class="lead">인스타에서 본 약, 여기서 더 자세히 읽어보세요</p>
-<p class="sub">표지를 누르면 블로그 글로 바로 이동해요</p>
-<div class="tags"><span>#약품정보</span><span>#성분정보</span><span>#복용법</span><span class="hot">#주의사항</span></div>
+<p class="lead">카드뉴스에서 본 의약품, 여기서 더 자세히 확인하세요</p>
+<p class="sub">표지를 누르면 해당 블로그 글로 이동해요</p>
+<div class="tags"><span>#의약품정보</span><span>#성분정보</span><span>#복용법</span><span class="hot">#주의사항</span></div>
 </header>
 
 <nav class="links">
@@ -98,10 +100,10 @@ main{max-width:520px;margin:0 auto;background:#fff;min-height:100vh}
 <a class="btn" href="https://www.threads.com/@info_medi_c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16.5 11.5c-.4-2.6-2-3.9-4.4-3.9-2.6 0-4.3 1.8-4.3 4.4 0 2.8 1.8 4.6 4.5 4.6 2.2 0 3.7-1.2 3.7-3 0-1.9-1.8-2.8-4-2.6-1.8.1-2.8 1-2.8 2.1 0 1 .9 1.8 2.3 1.8 2.3 0 3.4-1.9 3.4-4.8"/><path d="M19.5 7.5C18 4.6 15.4 3 12 3 6.8 3 3.5 6.8 3.5 12s3.3 9 8.5 9c3.9 0 6.8-2 7.9-5.2"/></svg>스레드</a>
 </nav>
 
-<div class="search"><label><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="약 이름으로 찾아보세요" autocomplete="off"></label></div>
+<div class="search"><label><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="의약품 이름으로 검색해 보세요" autocomplete="off"></label></div>
 
 <section class="section">
-<h2>약품 정보 <small id="count"></small></h2>
+<h2>의약품 정보 <small id="count"></small></h2>
 <div class="grid" id="list">
 <a class="item" href="https://m.blog.naver.com/PostSearchList.naver?blogId=info_medi_&amp;orderType=sim&amp;searchText=%ED%8C%8C%ED%8B%B0%EB%A7%88%EA%B2%94"><img src="c/파티마겔.jpg" alt="" loading="lazy">
 <span><b>파티마겔, 처음 바를 때 어떤 순서로 하나요?</b><small><time datetime="2026-09-25 18:13"></time></small></span></a>
@@ -112,11 +114,12 @@ main{max-width:520px;margin:0 auto;background:#fff;min-height:100vh}
 <a class="item" href="https://m.blog.naver.com/PostSearchList.naver?blogId=info_medi_&amp;orderType=sim&amp;searchText=%ED%8C%8C%EB%AA%A8%ED%81%90%EC%A0%95"><img src="c/파모큐정.jpg" alt="" loading="lazy">
 <span><b>파모큐정, 다른 약과 함께 복용해도 될까요?</b><small><time datetime="2026-09-24 07:39"></time></small></span></a>
 </div>
-<p class="empty" id="empty">찾는 약이 아직 여기엔 없어요.<br><a id="blogsearch" href="https://m.blog.naver.com/PostSearchList.naver?blogId=info_medi_">블로그에서 검색해 보기</a></p>
+<button class="more" id="more" type="button">더 보기</button>
+<p class="empty" id="empty">찾으시는 의약품은 아직 정리 중이에요.<br><a id="blogsearch" href="https://m.blog.naver.com/PostSearchList.naver?blogId=info_medi_">블로그에서 검색해 보기</a></p>
 </section>
 
 <footer class="foot">
-<p>이곳의 글은 공개된 의약품 허가 정보를 바탕으로 정리한 일반적인 내용이에요. 몸 상태에 따라 맞는 약과 복용법이 다를 수 있으니, 약을 새로 시작하거나 바꾸기 전에는 의사나 약사와 먼저 상담해 주세요.</p>
+<p>이곳의 글은 공개된 의약품 허가 정보를 바탕으로 정리한 일반적인 내용이에요. 개인의 건강 상태에 따라 알맞은 의약품과 복용법이 다를 수 있으니, 복용을 시작하거나 중단하기 전에는 반드시 의사 또는 약사와 상담해 주세요.</p>
 <nav><a href="https://blog.naver.com/info_medi_">블로그</a><a href="https://www.instagram.com/info_medi_c/">인스타그램</a><a href="https://www.threads.com/@info_medi_c">스레드</a></nav>
 <small>© 인포메디</small>
 </footer>
@@ -131,14 +134,22 @@ main{max-width:520px;margin:0 auto;background:#fff;min-height:100vh}
     var h=Math.floor((Date.now()-d)/36e5);
     t.textContent=h>=0&&h<24?(h<1?'방금 전':h+'시간 전'):d.getFullYear()+'. '+(d.getMonth()+1)+'. '+d.getDate()+'.';
   });
+  var PAGE=12,shown=PAGE,more=document.getElementById('more');
   function norm(s){return s.toLowerCase().replace(/\s+/g,'')}
   function run(){
     var v=norm(q.value),n=0;
-    items.forEach(function(el){var hit=!v||norm(el.querySelector('b').textContent).indexOf(v)>-1;el.style.display=hit?'':'none';if(hit)n++});
-    count.innerHTML=v?'<b>'+n+'</b>개 찾았어요':'<b>'+n+'</b>개';
+    items.forEach(function(el){
+      var hit=!v||norm(el.querySelector('b').textContent).indexOf(v)>-1;
+      if(hit)n++;
+      el.style.display=hit&&(v||n<=shown)?'':'none';
+    });
+    count.innerHTML=v?'검색 결과 <b>'+n+'</b>건':'총 <b>'+n+'</b>건';
     empty.style.display=n?'none':'block';
+    more.style.display=!v&&n>shown?'block':'none';
+    more.innerHTML='더 보기<span>'+Math.min(shown,n)+' / '+n+'</span>';
     bs.href='https://m.blog.naver.com/PostSearchList.naver?blogId=info_medi_&orderType=sim&searchText='+encodeURIComponent(q.value.trim());
   }
+  more.addEventListener('click',function(){shown+=PAGE;run()});
   q.addEventListener('input',run);run();
 })();
 </script>
