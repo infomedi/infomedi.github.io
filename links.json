@@ -1,10 +1,38 @@
 [
   {
+    "folder": "베타시토스테롤",
+    "title": "베타시토스테롤, 잇몸 영양제와 같은 걸까요?",
+    "blog": "https://blog.naver.com/info_medi_/224431601487",
+    "cover": "c/베타시토스테롤.jpg",
+    "at": "2026-10-06 21:55"
+  },
+  {
+    "folder": "알레그라정",
+    "title": "알레그라정, 180mg은 비염에 더 잘 들을까요?",
+    "blog": "https://blog.naver.com/info_medi_/224428920503",
+    "cover": "c/알레그라정.jpg",
+    "at": "2026-10-06 12:23"
+  },
+  {
     "folder": "아보다트",
     "title": "아보다트, 탈모약이 왜 전립선에도 쓰일까요?",
-    "blog": "https://m.blog.naver.com/PostSearchList.naver?blogId=info_medi_&orderType=sim&searchText=%EC%95%84%EB%B3%B4%EB%8B%A4%ED%8A%B8",
+    "blog": "https://blog.naver.com/info_medi_/224422852805",
     "cover": "c/아보다트.jpg",
     "at": "2026-10-06 07:47"
+  },
+  {
+    "folder": "로라타딘",
+    "title": "로라타딘, 감기약과 함께 먹어도 될까요?",
+    "blog": "https://blog.naver.com/info_medi_/224428923337",
+    "cover": "c/로라타딘.jpg",
+    "at": "2026-10-05 12:26"
+  },
+  {
+    "folder": "파모티딘",
+    "title": "파모티딘, 위산을 어떻게 줄이는 약일까요?",
+    "blog": "https://blog.naver.com/info_medi_/224428925200",
+    "cover": "c/파모티딘.jpg",
+    "at": "2026-10-05 07:47"
   },
   {
     "folder": "베루말",
@@ -16,7 +44,7 @@
   {
     "folder": "이버멕틴크림",
     "title": "이버멕틴크림, 구충 성분을 왜 얼굴에 바를까요?",
-    "blog": "https://m.blog.naver.com/PostSearchList.naver?blogId=info_medi_&orderType=sim&searchText=%EC%9D%B4%EB%B2%84%EB%A9%95%ED%8B%B4%ED%81%AC%EB%A6%BC",
+    "blog": "https://blog.naver.com/info_medi_/224422848348",
     "cover": "c/이버멕틴크림.jpg",
     "at": "2026-10-04 11:57"
   },
@@ -53,7 +81,7 @@
     "title": "우레아, 풋크림도 약국 크림과 같은 약일까요?",
     "blog": "https://blog.naver.com/info_medi_/224422847425",
     "cover": "c/우레아.jpg",
-    "at": "2026-09-30 12:07"
+    "at": "2026-09-30 14:09"
   },
   {
     "folder": "미녹시딜",
@@ -86,7 +114,7 @@
   {
     "folder": "아젤리아크림",
     "title": "아젤리아크림, 여드름 부위에만 발라도 될까요?",
-    "blog": "https://m.blog.naver.com/PostSearchList.naver?blogId=info_medi_&orderType=sim&searchText=%EC%95%84%EC%A0%A4%EB%A6%AC%EC%95%84%ED%81%AC%EB%A6%BC",
+    "blog": "https://blog.naver.com/info_medi_/224422838259",
     "cover": "c/아젤리아크림.jpg",
     "at": "2026-09-24 16:46"
   },
